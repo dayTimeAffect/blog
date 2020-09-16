@@ -1,0 +1,49 @@
+### 简单实现一个深克隆函数，覆盖常见使用场景
+对于一般数据，我们可以使用`JSON.stringify `和 `JSON.parse`的组合来完成深克隆，但是这种模式对于特殊数据列如date、RegExp甚至NAN这些数据都会克隆失败，也不能继承构造函数原型上的属性，循环引用也不行。
+
+所以可以使用遍历+递归的方式实现。
+主要点：
++ 循环引用使用hash表解决
++ date、RegExp等类型分别克隆
++ 使用constructor继承原型链
++ 使用Reflect.ownKeys遍历本身属性键可以包含Symbol属性和不可遍历的属性
+```javascript
+const deepClone = (target, cache = new WeakMap()) => {
+    const tem = Object.prototype.toString.call(target).slice(8, -1).toLocaleLowerCase()
+    switch (tem) {
+        case 'null':
+            return null
+        case 'date':
+            return new Date(target)
+        case 'regexp':
+            return new RegExp(target)
+        case 'string':
+            return target
+        case 'number':
+            return target
+        case 'boolean':
+            return target
+        case 'undefined':
+            return target
+        case 'function':
+            return target
+        case 'symbol':
+            return target
+    }
+    let result = new target.constructor()
+    cache.set(target, result)
+    Reflect.ownKeys(target).forEach(key => {
+        if (typeof target[key] === 'object'){
+            if (cache.has(target[key])){
+                result[key] = cache.get(target[key])
+            }else {
+                result[key] = deepClone(target[key], cache)
+                cache.set(target[key], result[key])
+            }
+        }else{
+            result[key] = target[key]
+        }
+    })
+    return result
+}
+```
