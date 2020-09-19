@@ -1,0 +1,36 @@
+### [相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)
+
+难度简单
+
+编写一个程序，找到两个单链表相交的起始节点
+
+```javascript
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */
+var getIntersectionNode = function(headA, headB) {
+    let recode = new Set()
+    let p = headA
+    while (p){
+        recode.add(p)
+        p = p.next
+    }
+    p = headB
+    while (p){
+        if (recode.has(p)) return p
+        p = p.next
+    }
+    return p
+};
+```
+
