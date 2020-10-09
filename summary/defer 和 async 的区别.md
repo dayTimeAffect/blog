@@ -6,6 +6,8 @@
 
 **async**: 加载后立即执行，即不会按照声明脚本时的顺序执行
 
+![img](https://github.com/dayTimeAffect/all-Interview/blob/master/img/script%E5%8A%A0%E8%BD%BD%E6%89%A7%E8%A1%8C.jpg?raw=true)
+
 defer会在`DOMContentLoaded`前执行，async执行时机无法确定
 
 > 注1：带async的脚本一定会在load事件之前执行，可能会在DOMContentLoaded之前或之后执行。  
