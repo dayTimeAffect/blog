@@ -4,3 +4,6 @@
 
 ### 浏览器
 + [前端缓存与本地存储](https://github.com/dayTimeAffect/blog/blob/master/article/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98%E4%B8%8E%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8.md)
+
+### JS
++ Promise实现原理（正在创作中）
