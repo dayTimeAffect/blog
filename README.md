@@ -7,3 +7,6 @@
 
 ### JS
 + Promise实现原理（正在创作中）
+
+### 实践
++ [webpack实践——可视化资源分析与按需加载](https://github.com/dayTimeAffect/blog/blob/master/article/webpack%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94%E5%8F%AF%E8%A7%86%E5%8C%96%E8%B5%84%E6%BA%90%E5%88%86%E6%9E%90%E4%B8%8E%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD.md)
