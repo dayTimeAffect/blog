@@ -8,6 +8,9 @@
 ### JS
 + Promise实现原理（正在创作中）
 
+### HTTP
++ [TCP三次握手与四次挥手](https://github.com/dayTimeAffect/blog/blob/master/article/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E4%B8%8E%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.md)
+
 ### 实践
 + [webpack实践——可视化资源分析与按需加载](https://github.com/dayTimeAffect/blog/blob/master/article/webpack%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94%E5%8F%AF%E8%A7%86%E5%8C%96%E8%B5%84%E6%BA%90%E5%88%86%E6%9E%90%E4%B8%8E%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD.md)
 + [前端图像处理——马赛克](https://github.com/dayTimeAffect/blog/blob/master/article/%E5%89%8D%E7%AB%AF%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B9%8B%E9%A9%AC%E8%B5%9B%E5%85%8B.md)
