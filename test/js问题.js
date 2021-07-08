@@ -10,11 +10,30 @@
 }
 
 consoleX();*/
-for (let i = [], j = 0; j < 2; j ++){
+/*for (let i = [], j = 0; j < 2; j ++){
     i.push(j)
     setTimeout(() => {console.log([...i]);}, 0)
 }
 for (let i = [], j = 0; j < 2; j ++){
     setTimeout(() => {console.log([...i]);}, 0)
     setTimeout(() => {console.log(j);}, 0)
+}*/
+/*
+let x = 5
+const a = {
+    x: 10,
+    showX1() {
+        return this.x;
+    },
+    showX2: () => this.x,
+};
+console.log(a.showX1());
+console.log(a.showX2());
+console.log(global);*/
+function aa(a){
+    console.log(a)
+    var a = 1
+    function a(){}
+    console.log(a)
 }
+aa(2)

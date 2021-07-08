@@ -59,3 +59,32 @@ for (let i = [], j = 0; j < 2; j ++){
 > 答案: A<br>
 > 解析: 虽然let定义变量有块级作用域, 但是i为引用类型，i中存放的是指针没有变，所以最终i是[0, 1]
 
+#### 5
+
+```javascript
+let x = 5
+const a = {
+    x: 10,
+    showX1() {
+        return this.x;
+    },
+    showX2: () => this.x,
+};
+console.log(a.showX1());
+console.log(a.showX2());
+golbal.a
+```
+
++ `10` and `5`
++ `10` and `10`
++ `5` and `5`
++ `10` and `undefined`
+
+> 答案: D<br>
+> 解析: showX1调用时，this指向调用对象也就是a，showX2为箭头函数，this指向定义时所处的对象，但是let定义的变量在
+> Script作用域中，所以在浏览器环境中，this为window，不能获取到x
+
+
+### 参考
++ [javascript-questions](https://github.com/lydiahallie/javascript-questions)
+
