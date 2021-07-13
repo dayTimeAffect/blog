@@ -30,10 +30,31 @@ const a = {
 console.log(a.showX1());
 console.log(a.showX2());
 console.log(global);*/
-function aa(a){
+/*function aa(a){
     console.log(a)
     var a = 1
     function a(){}
     console.log(a)
 }
-aa(2)
+aa(2)*/
+/*
+let a = 1
+let b = new Number(1)
+let c = 1
+
+console.log(a == b)
+console.log(a === b)
+console.log(b === c)
+console.log(a === c)*/
+/*function getPersonInfo(one, two, three) {
+    console.log(one)
+    console.log(two)
+    console.log(three)
+}
+
+const person = 'Lydia'
+const age = 21
+
+getPersonInfo`${person} is ${age} years old`*/
+let undefined = 123
+console.log(undefined);
