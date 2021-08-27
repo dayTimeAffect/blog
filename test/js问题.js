@@ -58,21 +58,23 @@ const age = 21
 getPersonInfo`${person} is ${age} years old`*/
 // let undefined = 123
 // console.log(undefined);
-this.a = 1
-var name = 'Window';
-obj = {
-    name: 'Obj',
-    say(){
-        console.log(this.name);
-    },
-    say1: () => {
-        console.log(this);
+
+
+let userInfo = {
+    name:"jack.ma",
+    age:13,
+    sex:'male',
+    updateInfo:function(){
+        // 模拟 xmlhttprequest 请求延时
+        setTimeout(function(){
+            this.name = "pony.ma"
+            this.age = 39
+            this.sex = 'female'
+        },100)
     }
 }
-obj.say();
-obj.say1();
-fn = obj.say;
-fn1 = obj.say1;
-fn();
-fn1();
+userInfo.updateInfo()
+setTimeout(() => {
+    console.log(this)
+}, 200)
 
