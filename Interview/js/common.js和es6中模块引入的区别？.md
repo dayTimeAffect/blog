@@ -6,7 +6,7 @@ Common.js是一种模块规范，最初被应用于Nodejs，成为Nodejs 的模�
 我们平时在Webpack 中使用的export和import，会经过Babel转换为CommonJs规范。
 在使用上的差别主要有:
 
-+ CommonJs模块输出的是一个值的拷贝，ES6模块输出的是值的引用CommonJS模块是运行时加载，ES6模块是编译时输出接口。
++ CommonJs模块输出的是一个值的拷贝，ES6模块输出的是值的引用;CommonJS模块是运行时加载，ES6模块是编译时输出接口。
 + CommonJs是单个值导出，ES6 Module可以导出多个
 + CommonJs是动态语法可以写在判断里，ES6 Module静态语法只能写在顶层
 + CommonJs的this是当前模块，ES6 Module的this是undefined
