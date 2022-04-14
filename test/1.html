@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  function A(value){
+      this.aa = value
+  }
+  A.prototype.cc = function (){
+      console.log(this)
+  }
+  let a = new A(1)
+  a.cc()
+
+</script>
+</html>
