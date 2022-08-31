@@ -22,3 +22,23 @@ var deepestLeavesSum = function(root) {
     }
     return res
 };
+var deepestLeavesSum = function(root) {
+    let maxC = 0, res = 0
+    const dfs = (node, c) => {
+        if (c > maxC){
+            res = 0
+            maxC = c
+        }
+        if (c === maxC){
+            res += node.val
+        }
+        if (node.left){
+            dfs(node.left, c + 1)
+        }
+        if (node.right){
+            dfs(node.right, c + 1)
+        }
+    }
+    dfs(root, 0)
+    return res
+};
