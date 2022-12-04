@@ -27,6 +27,7 @@ var isSubsequence = function(s, t) {
             }
         }
     }
+    console.log(dp);
     return dp[m][n] === m
 };
 console.log(isSubsequence("abc","ahbgdc"));
