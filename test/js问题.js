@@ -60,6 +60,7 @@ getPersonInfo`${person} is ${age} years old`*/
 // console.log(undefined);
 
 
+/*
 let userInfo = {
     name:"jack.ma",
     age:13,
@@ -77,4 +78,23 @@ userInfo.updateInfo()
 setTimeout(() => {
     console.log(this)
 }, 200)
+*/
+const myInstanceOf = (obj, fun) => {
+    let funPro = fun.prototype;
+    let objPro = obj.__proto__;
 
+    while(objPro){
+        if(objPro === funPro){
+            return true;
+        }
+        // 当前原型对象不符合，则继续再原型对象的原型上继续查找
+        objPro = objPro.__proto__
+    }
+    return false;
+}
+function A(){}
+function B(){}
+let a = new A()
+console.log(myInstanceOf(a, A));
+console.log(myInstanceOf(a, Object));
+console.log(myInstanceOf(a, B));

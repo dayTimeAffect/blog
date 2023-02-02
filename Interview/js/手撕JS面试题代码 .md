@@ -1,7 +1,7 @@
 + 实现防抖（debounce）函数 <font color=green >√</font>
 + 实现节流（throttle）函数 <font color=green >√</font>
-+ 实现深拷贝函数
-+ 实现instanceof函数
++ 实现深拷贝函数 <font color=green >√</font>
++ 实现instanceof函数 <font color=green >√</font>
 + 模拟实现new操作符
 + 实现call函数
 + 实现apply函数
