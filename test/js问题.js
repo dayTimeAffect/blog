@@ -79,6 +79,7 @@ setTimeout(() => {
     console.log(this)
 }, 200)
 */
+/*
 const myInstanceOf = (obj, fun) => {
     let funPro = fun.prototype;
     let objPro = obj.__proto__;
@@ -97,4 +98,49 @@ function B(){}
 let a = new A()
 console.log(myInstanceOf(a, A));
 console.log(myInstanceOf(a, Object));
-console.log(myInstanceOf(a, B));
+console.log(myInstanceOf(a, B));*/
+
+/*
+class P {
+    constructor(props) {
+        this.P_a = props.P_a
+        this.a = this.pp()
+    }
+    showP(){
+        console.log('showP')
+    }
+    pp(){
+        console.log(1);
+        return function ppp(){}
+    }
+}
+class C extends P{
+    constructor(props) {
+        super(props)
+        this.C_a = props.C_a
+        this.a = this.cc()
+    }
+    showC(){
+        console.log('showC')
+    }
+    cc(){
+        console.log(2);
+        return function ccc(){}
+    }
+}
+const obj = new C({P_a: 'p', C_a: 'c'})
+console.log(obj);
+console.log(obj.showC());
+console.log(obj.showP());*/
+
+function* A(){
+    yield 'haha'
+    yield 'bb'
+    return 'cc'
+}
+let a = A()
+for (let v of a){
+    if (v){
+        console.log(v);
+    }
+}

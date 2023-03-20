@@ -10,13 +10,12 @@
 function mynew () {
      // 1、创建一个新对象
      const obj = Object.create({});    // 也可以写成 const obj = {}
-     // 2、将this指向该对象
+    // 2、将新对象的原型指向构造函数的原型
+     obj.__proto__ = Fn.prototype
+     // 3、将this指向该对象
      let Fn = [].shift.call(arguments);    // 把构造函数分离出来
      let returnObj = Fn.apply(obj, arguments);     // 通过apply将this指向由Fn变为obj
-     
-     // 3、将新对象的原型指向构造函数的原型
-     obj.__proto__ = Fn.prototype
-     
+    
     // 4、返回对象（如果构造函数有返回对象，那么就返回构造函数的对象，如果没有就返回新对象）
     return Object.prototype.toString.call(returnObj) == '[object Object]' ? returnObj : obj;
 }

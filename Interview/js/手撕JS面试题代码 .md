@@ -10,13 +10,13 @@
 + 实现JS的继承
 + 实现JSON.stringify
 + 实现JSON.parse
++ 实现简版的Promise
 + 实现Promise.resolve方法
 + 实现Promise.reject方法
 + 实现Promise.finally方法
 + 实现Promise.all方法
 + 实现Promise.allSettled方法
 + 实现Promise.race方法
-+ 实现简版的Promise
 + 实现解析URL的Params方法
 + 实现简版模板引擎
 + 实现千分位分割
