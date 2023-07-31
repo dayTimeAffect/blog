@@ -5,32 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-<button id="btn">请求接口</button>
+
+  <div id="div">
+    <video controls src="https://imgcdn.hljtv.com/2023-03-02/fmappv_45ECKRwe5zUEURFkjVUSPdntjyKPqXuqf2HvIezrKNn6LI8mSCUpj8waOn/oZyYxrd7aJzBoefaooWWQXYXBjA==.mp4"></video>
+  </div>
 </body>
-<script src="./crypto-js.js"></script>
 <script>
-  const btn = document.getElementById("btn")
-  btn.onclick = () => {
-    const mobile = '18282649588'
-    // 云市场分配的密钥Id
-    var secretId = "AKID2CsIJjJV6226yXz2VV99qzkB9v8cMGnvIP19";
-    // 云市场分配的密钥Key
-    var secretKey = "8oggCa11umjlfiu84j251lBn6q1b9ua003docsXH";
-    var source = "market";
-    // 签名
-    var datetime = (new Date()).toGMTString();
-    var signStr = "x-date: " + datetime + "\n" + "x-source: " + source;
-    var sign = CryptoJS.enc.Base64.stringify(CryptoJS.HmacSHA1(signStr, secretKey))
-    var auth = 'hmac id="' + secretId + '", algorithm="hmac-sha1", headers="x-date x-source", signature="' + sign + '"';
-    fetch("https://service-iuz6i8js-1253285064.gz.apigw.tencentcs.com/release/sms?mobile=" + mobile, {
-      headers: {
-        "X-Source": 'market',
-        "X-Date": datetime,
-        "Authorization": auth,
-      }
-    }).then(res => {
-      console.log(res);
-    })
-  }
+  const div = document.getElementById('div');
+  div.addEventListener('click', function () {
+    console.log(1)
+  }, true)
+  document.getElementsByTagName('video')[0].addEventListener('click', function () {
+    console.log(2)
+  }, false)
+
 </script>
 </html>
