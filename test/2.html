@@ -5,19 +5,27 @@
     <title>Title</title>
 </head>
 <body>
-
-  <div id="div">
-    <video controls src="https://imgcdn.hljtv.com/2023-03-02/fmappv_45ECKRwe5zUEURFkjVUSPdntjyKPqXuqf2HvIezrKNn6LI8mSCUpj8waOn/oZyYxrd7aJzBoefaooWWQXYXBjA==.mp4"></video>
-  </div>
+  <button id="btn" style="position: fixed; bottom: 12px;left: 12px;">点击</button>
+  <div class="div" style="width: 95%;box-sizing: border-box;background-color: #eee;"></div>
 </body>
+<script src="./waterfallflow.js"></script>
 <script>
-  const div = document.getElementById('div');
-  div.addEventListener('click', function () {
-    console.log(1)
-  }, true)
-  document.getElementsByTagName('video')[0].addEventListener('click', function () {
-    console.log(2)
-  }, false)
-
+  let imgList = ["https://img0.baidu.com/it/u=3628503530,464378779&fm=253&fmt=auto&app=120&f=JPEG?w=1200&h=800", "https://img0.baidu.com/it/u=256816879,771155532&fm=253&fmt=auto&app=120&f=JPEG?w=1204&h=800", "https://img0.baidu.com/it/u=3838093562,4126749835&fm=253&fmt=auto&app=138&f=JPEG?w=1144&h=500", "https://img2.baidu.com/it/u=612844894,2239973497&fm=253&fmt=auto&app=138&f=JPEG?w=334&h=500", "https://img1.baidu.com/it/u=420421608,846052722&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=473", "https://img0.baidu.com/it/u=3090532544,4109313510&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500", "https://img1.baidu.com/it/u=4202558927,1752308346&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500", "https://img0.baidu.com/it/u=1749638093,3394545972&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=666", "https://img0.baidu.com/it/u=932801991,1943266128&fm=253&fmt=auto&app=138&f=JPEG?w=998&h=500", "https://img2.baidu.com/it/u=3895999535,621145085&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=730", "https://img2.baidu.com/it/u=3086837686,3956476594&fm=253&fmt=auto&app=138&f=JPEG?w=667&h=500", "https://img0.baidu.com/it/u=3773090653,2338589126&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500", "https://img1.baidu.com/it/u=3213028832,2848109658&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=750", "https://img0.baidu.com/it/u=3713458895,2577250832&fm=253&fmt=auto&app=138&f=JPEG?w=930&h=500", "https://img0.baidu.com/it/u=2562601766,3239720871&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=333", "https://img1.baidu.com/it/u=1037863750,957913187&fm=253&fmt=auto&app=138&f=JPEG?w=925&h=500", "https://img1.baidu.com/it/u=4049906368,438977941&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500", "https://img2.baidu.com/it/u=1777188475,2533153882&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500", "https://img0.baidu.com/it/u=2021266978,582980172&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500", "https://img1.baidu.com/it/u=979083104,1936879404&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=281", "https://img0.baidu.com/it/u=4014893928,1300784369&fm=253&fmt=auto&app=138&f=JPEG?w=890&h=500", "https://img0.baidu.com/it/u=2997410293,1271329866&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=333", "https://img2.baidu.com/it/u=1958002870,3810657931&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=355", "https://img1.baidu.com/it/u=1636587287,3068132797&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500", "https://img0.baidu.com/it/u=279322138,2129187396&fm=253&fmt=auto&app=138&f=JPEG?w=670&h=447", "https://img1.baidu.com/it/u=2432868701,1670441599&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500", "https://img1.baidu.com/it/u=2994443953,4042858423&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=328", "https://img0.baidu.com/it/u=4120070778,1326534427&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500", "https://img1.baidu.com/it/u=816245536,3243393098&fm=253&fmt=auto&app=138&f=JPEG?w=700&h=394", "https://img1.baidu.com/it/u=166295359,4135409517&fm=253&fmt=auto&app=138&f=JPEG?w=751&h=500", "https://img0.baidu.com/it/u=3120426427,3366290321&fm=253&fmt=auto&app=138&f=JPEG?w=667&h=500", "https://img0.baidu.com/it/u=4016269132,1611050377&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=750", "https://img0.baidu.com/it/u=3708827861,748903284&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500", "https://img0.baidu.com/it/u=326427165,2376832184&fm=253&fmt=auto&app=138&f=JPEG?w=300&h=450", "https://img2.baidu.com/it/u=358848257,2870903920&fm=253&fmt=auto&app=138&f=JPEG?w=747&h=500", "https://img1.baidu.com/it/u=1015460758,693551072&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=800"]
+  let waterfallFlowRow = null
+  document.getElementById('btn').addEventListener('click', function () {
+    if (waterfallFlowRow) {
+      waterfallFlowRow.addImgList(imgList.splice(0, 8))
+    } else {
+      waterfallFlowRow = new WaterfallFlowRow({
+        container: document.querySelector('.div'),
+        imgList: imgList,
+        bottomInfoRender: function () {
+          return `<div style="text-align: center;">其他信息</div>`
+        }
+      })
+      waterfallFlowRow.resize()
+      window.waterfallFlowRow = waterfallFlowRow
+    }
+  })
 </script>
 </html>
